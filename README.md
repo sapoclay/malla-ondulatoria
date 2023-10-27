@@ -25,5 +25,3 @@ Los usuarios pueden interactuar con la visualización de varias maneras. Pueden 
     - Explora la Interacción: Haz clic y arrastra para ver cómo las partículas reaccionan al movimiento del ratón.
     - Experimenta con Fuerzas Adicionales: Mantén presionado el botón del ratón para aplicar fuerzas extra a las partículas.
     - Observa la Evolución en Tiempo Real: La visualización cambia y evoluciona en tiempo real, permitiéndote crear patrones visuales únicos.
-
-Este proyecto representa una fusión de arte y tecnología, ofreciendo a los espectadores una experiencia visualmente estimulante y altamente interactiva.
