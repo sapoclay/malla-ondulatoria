@@ -2,6 +2,8 @@
 
 Este proyecto combina la potencia de la programación en JavaScript con la flexibilidad creativa de HTML y CSS para crear una fascinante visualización interactiva. La animación se ejecuta en un lienzo HTML5, permitiendo una experiencia inmersiva.
 
+![malla](https://github.com/sapoclay/malla-ondulatoria/assets/6242827/b2ac0d69-d8bf-48a9-beb1-47830a145e49)
+
 ## Código JavaScript
 
 El archivo script.js contiene el código esencial para el funcionamiento de la visualización. Utiliza la API requestAnimationFrame para lograr una animación fluida y eficiente. El código se encarga de calcular y actualizar la posición y velocidad de una serie de partículas que forman una malla.
