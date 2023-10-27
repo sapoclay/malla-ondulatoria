@@ -7,31 +7,31 @@ window.requestAnimFrame = (function(callback) {
 })();
 
 // Definición de variables
-var gnum = 90; // Número de cuadrículas por fotograma
 var _x = 2265; // Ancho x (ancho del lienzo)
 var _y = 1465; // Alto y (alto del lienzo)
 var w = _x / gnum; // Ancho de cuadrícula
 var h = _y / gnum; // Alto de cuadrícula
+var gnum = 95; // Número de cuadrículas por fotograma
 var $; // Contexto del lienzo
 var parts; // Partículas
 var frm = 0; // Valor de fotograma
-var P1 = 0.0005; // Punto uno
-var P2 = 0.01; // Punto dos
-var n = 0.98; // Valor n para más adelante
-var n_vel = 0.03; // Velocidad n
-var ŭ = 0; // Actualización de color
 var msX = 0; // Coordenada x del ratón
 var msY = 0; // Coordenada y del ratón
 var msdn = false; // Bandera de clic del ratón
+var P1 = 0.0005; // Punto uno
+var P2 = 0.01; // Punto dos
+var ŭ = 0; // Actualización de color
+var n = 0.98; // Valor n para más adelante
+var n_vel = 0.03; // Velocidad n
 
 // Definición de la clase Part
 var Part = function() {
   this.x = 0; // Posición x
   this.y = 0; // Posición y
-  this.vx = 0; // Velocidad en x
-  this.vy = 0; // Velocidad en y
   this.ind_x = 0; // Índice en x
   this.ind_y = 0; // Índice en y
+  this.vx = 0; // Velocidad en x
+  this.vy = 0; // Velocidad en y
 };
 
 // Función de fotograma para las partículas
@@ -94,16 +94,6 @@ function go() {
   }
 }
 
-// Función para mover las partículas
-function mv_part() {
-  for (var i = 0; i < gnum; i++) {
-    for (var j = 0; j < gnum; j++) {
-      var p = parts[i][j];
-      p.frame();
-    }
-  }
-}
-
 // Función para dibujar la cuadrícula
 function draw() {
   ŭ += 0.4; // Incrementa el valor de ŭ para cambiar los colores más rápido
@@ -119,6 +109,16 @@ function draw() {
     }
   }
   $.stroke();
+}
+
+// Función para mover las partículas
+function mv_part() {
+  for (var i = 0; i < gnum; i++) {
+    for (var j = 0; j < gnum; j++) {
+      var p = parts[i][j];
+      p.frame();
+    }
+  }
 }
 
 // Función para dibujar cada elemento en el array
@@ -185,16 +185,16 @@ function MSDN(e) {
   msdn = true;
 }
 
-// Se activa cuando se libera el botón del ratón
-function MSUP(e) {
-  msdn = false;
-}
-
 // Se activa cuando se mueve el ratón. Calcula la posición del ratón dentro del lienzo (msX y msY) en relación con el área del lienzo y el evento del ratón (e)
 function MSMV(e) {
   var rect = e.target.getBoundingClientRect();
   msX = e.clientX - rect.left;
   msY = e.clientY - rect.top;
+}
+
+// Se activa cuando se libera el botón del ratón
+function MSUP(e) {
+  msdn = false;
 }
 
 // Función para ejecutar la animación
